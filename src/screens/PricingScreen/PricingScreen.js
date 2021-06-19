@@ -1,12 +1,13 @@
 import React from 'react';
-import {Text, View, ScrollView} from 'react-native';
+import {View, ScrollView} from 'react-native';
+import {Header} from '../../components';
 import styles from './PricingScreenStyles';
 
 const PricingScreen = () => {
   return (
     <View style={styles.container}>
       <ScrollView>
-        <Text>Pricing screen</Text>
+        <Header />
       </ScrollView>
     </View>
   );
