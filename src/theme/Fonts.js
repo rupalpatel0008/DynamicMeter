@@ -1,5 +1,7 @@
 const type = {
-  base: 'Leftist Mono Sans Regular',
+  font300: 'MuseoSansRounded300',
+  font500: 'MuseoSansRounded500',
+  font700: 'MuseoSansRounded700',
 };
 
 const size = {
@@ -9,22 +11,22 @@ const size = {
   medium: 14,
   larger: 16,
   label: 16,
-  baseLineHeight: '16',
+  baseLineHeight: 16,
 };
 
 const style = {
   h1: {
-    fontFamily: type.base,
+    fontFamily: type.font500,
     fontSize: size.h1,
     fontWeight: '500',
   },
   normal: {
-    fontFamily: type.base,
+    fontFamily: type.font300,
     fontSize: size.regular,
     lineHeight: size.baseLineHeight,
   },
   input: {
-    fontFamily: type.base,
+    fontFamily: type.font300,
     fontSize: size.input,
     fontWeight: '500',
   },
