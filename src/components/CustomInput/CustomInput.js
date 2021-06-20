@@ -12,7 +12,7 @@ const CustomInput = ({label, value, setValue, containerStyle}) => {
         <TextInput
           style={[
             styles.inputText,
-            value === 0 ? {paddingLeft: Metrics.baseMargin} : {},
+            value === 0 && {paddingLeft: Metrics.baseMargin},
           ]}
           value={value}
           keyboardType="number-pad"

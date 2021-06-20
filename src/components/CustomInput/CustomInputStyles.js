@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
     color: Colors.secondary,
     marginBottom: -3,
     marginLeft: -1,
+    width: '100%',
   },
 });
 
