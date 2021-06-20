@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     borderColor: Colors.borders,
     flexDirection: 'row',
+    marginHorizontal: Metrics.baseMargin,
   },
   infoText: {
     ...Fonts.style.normal,

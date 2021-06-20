@@ -16,7 +16,7 @@ const CustomInput = ({label, value, setValue, containerStyle}) => {
           ]}
           value={value}
           keyboardType="number-pad"
-          maxLength={3}
+          maxLength={5}
           onChangeText={setValue}
           underlineColorAndroid="transparent"
         />

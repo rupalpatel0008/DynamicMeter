@@ -8,10 +8,13 @@ const paddingInBetween =
 const styles = StyleSheet.create({
   container: {
     marginTop: 15,
+    marginBottom: Metrics.baseMargin,
+    marginHorizontal: Metrics.baseMargin,
   },
   label: {
     ...Fonts.style.label,
     color: Colors.secondary,
+    marginHorizontal: Metrics.baseMargin,
     marginTop: Metrics.baseMargin,
   },
   separator: {

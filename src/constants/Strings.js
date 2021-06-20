@@ -6,12 +6,18 @@ const Strings = {
   labels: {
     regularPrice: 'Regular Price (Daily) *',
     peakPrice: 'Peak Price (Daily) *',
+    longTerRentalLabel: 'Long Term Rental Price (Monthly)*',
   },
   regularPriceInfo:
     'Our pricing algorithm recommends price between $55 - 70 to maximise demand basis your car type and location',
   peakPriceInfo:
     'Peak price allow you to charge extra for weekends or holidays. Recommended peak price for your car is between $75-90.',
   peakPriceDays: 'Peak Price Days',
+  peakPriceOnHolidays: 'Set peak price on public holidays',
+  autoApplyPeakPrice: 'Automatically apply peak prices on public holidays.',
+  longTermRental: 'Long Term Rental',
+  longTermInfo:
+    'Allow guests to book your car for long term, ie greater than 2 months.',
   weekDays: [
     {
       id: '1',

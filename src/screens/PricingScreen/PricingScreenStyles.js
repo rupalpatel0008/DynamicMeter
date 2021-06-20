@@ -8,11 +8,13 @@ const styles = StyleSheet.create({
     height: ScreenHeight,
   },
   contentContainer: {
-    paddingHorizontal: Metrics.baseMargin,
     paddingTop: Metrics.baseMargin,
   },
   label: {
     marginTop: Metrics.baseMargin,
+  },
+  longTermRentalContainer: {
+    borderBottomWidth: 1,
   },
 });
 

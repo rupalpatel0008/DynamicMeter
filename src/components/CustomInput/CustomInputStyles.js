@@ -5,8 +5,10 @@ const styles = StyleSheet.create({
   label: {
     ...Fonts.style.label,
     color: Colors.secondary,
+    marginHorizontal: Metrics.baseMargin,
   },
   inputBoxContainer: {
+    marginHorizontal: Metrics.baseMargin,
     backgroundColor: Colors.white,
     height: Metrics.inputHeight,
     borderColor: Colors.borders,
