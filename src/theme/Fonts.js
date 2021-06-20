@@ -26,9 +26,9 @@ const style = {
     lineHeight: size.baseLineHeight,
   },
   input: {
-    fontFamily: type.font300,
+    fontFamily: type.font500,
     fontSize: size.input,
-    fontWeight: '500',
+    fontWeight: 'bold',
   },
 };
 
