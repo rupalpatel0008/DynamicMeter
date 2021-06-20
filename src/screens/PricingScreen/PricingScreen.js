@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
 import {View, ScrollView} from 'react-native';
-import {Header, CustomInput} from '../../components';
+import {Header, CustomInput, InformationBlock} from '../../components';
 import {Strings} from '../../constants';
 import styles from './PricingScreenStyles';
 
 const PricingScreen = () => {
   const [regularPrice, setRegularPrice] = useState(0);
   const [peakPrice, setPeakPrice] = useState(0);
-  console.log({regularPrice, peakPrice})
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -18,12 +17,14 @@ const PricingScreen = () => {
             setValue={setRegularPrice}
             label={Strings.labels.regularPrice}
           />
+          <InformationBlock infoText={Strings.regularPriceInfo} />
           <CustomInput
             value={peakPrice}
             setValue={setPeakPrice}
             label={Strings.labels.peakPrice}
             containerStyle={styles.label}
           />
+          <InformationBlock infoText={Strings.peakPriceInfo} />
         </View>
       </ScrollView>
     </View>
