@@ -11,6 +11,51 @@ const Strings = {
     'Our pricing algorithm recommends price between $55 - 70 to maximise demand basis your car type and location',
   peakPriceInfo:
     'Peak price allow you to charge extra for weekends or holidays. Recommended peak price for your car is between $75-90.',
+  peakPriceDays: 'Peak Price Days',
+  weekDays: [
+    {
+      id: '1',
+      value: 'Monday',
+      showText: 'M',
+      isSelected: false,
+    },
+    {
+      id: '2',
+      value: 'Tuesday',
+      showText: 'T',
+      isSelected: false,
+    },
+    {
+      id: '3',
+      value: 'Wednesday',
+      showText: 'W',
+      isSelected: false,
+    },
+    {
+      id: '4',
+      value: 'Thursday',
+      showText: 'T',
+      isSelected: false,
+    },
+    {
+      id: '5',
+      value: 'Friday',
+      showText: 'F',
+      isSelected: false,
+    },
+    {
+      id: '6',
+      value: 'Saturday',
+      showText: 'S',
+      isSelected: false,
+    },
+    {
+      id: '7',
+      value: 'Sunday',
+      showText: 'S',
+      isSelected: false,
+    },
+  ],
 };
 
 export default Strings;
