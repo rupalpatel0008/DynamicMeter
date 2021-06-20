@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
     color: Colors.white,
   },
   chevron: {
-    height: 15,
-    width: 15,
+    height: 5.26,
+    width: 10,
     tintColor: Colors.white,
     marginLeft: Metrics.smallMargin,
   },
