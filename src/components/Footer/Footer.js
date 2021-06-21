@@ -2,6 +2,7 @@ import React from 'react';
 import {Image, View, Text, TouchableOpacity} from 'react-native';
 import {Icons} from '../../assets';
 import {Strings} from '../../constants';
+import {Meter} from '../index';
 import styles from './FooterStyles';
 
 const BackButton = () => {
@@ -23,8 +24,7 @@ const NextButton = () => {
 const Footer = () => {
   return (
     <View style={styles.container}>
-      <Text>Meter will come here</Text>
-      <Text>Meter will come here</Text>
+      <Meter value={4} />
       <View style={styles.buttonsRow}>
         <BackButton />
         <NextButton />

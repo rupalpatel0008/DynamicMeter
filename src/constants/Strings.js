@@ -63,6 +63,23 @@ const Strings = {
       isSelected: false,
     },
   ],
+  demands: {
+    good: {
+      value: 'Good Demand',
+      details:
+        ': Based on your settings you are on your way to attract good level of demand.',
+    },
+    average: {
+      value: 'Average Demand',
+      details:
+        ': Based on your settings you are on your way to attract average level of demand.',
+    },
+    low: {
+      value: 'Low Demand',
+      details:
+        ': Based on your settings you are on your way to attract low level of demand.',
+    },
+  },
 };
 
 export default Strings;

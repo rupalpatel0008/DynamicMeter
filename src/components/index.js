@@ -6,3 +6,4 @@ export {useSelectedWeekDays} from './WeekDays/WeekDays';
 export {default as OptionBlock} from './OptionBlock/OptionBlock';
 export {default as LongTermRentalOptionBlock} from './LongTermRentalOptionBlock/LongTermRentalOptionBlock';
 export {default as Footer} from './Footer/Footer';
+export {default as Meter} from './Meter/Meter';

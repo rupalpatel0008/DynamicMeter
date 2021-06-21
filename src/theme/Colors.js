@@ -8,6 +8,9 @@ const Colors = {
   bars: '#EFEFEF',
   borders: '#E6E6E6',
   shadow: '#00000014',
+  lowDemand: '#ec6666',
+  averageDemand: '#ffcd05',
+  goodDemand: '#79de86',
 };
 
 export default Colors;
