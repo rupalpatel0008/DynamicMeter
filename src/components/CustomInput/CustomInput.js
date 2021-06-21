@@ -3,7 +3,13 @@ import {Text, TextInput, View} from 'react-native';
 import {Metrics} from '../../theme';
 import styles from './CustomInputStyles';
 
-const CustomInput = ({label, value, setValue, containerStyle}) => {
+const CustomInput = ({
+  label,
+  value,
+  setValue,
+  containerStyle,
+  isDisabled = false,
+}) => {
   return (
     <View style={containerStyle}>
       <Text style={styles.label}>{label}</Text>
@@ -19,6 +25,7 @@ const CustomInput = ({label, value, setValue, containerStyle}) => {
           maxLength={5}
           onChangeText={setValue}
           underlineColorAndroid="transparent"
+          editable={!isDisabled}
         />
       </View>
     </View>

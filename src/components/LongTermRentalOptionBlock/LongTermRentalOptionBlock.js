@@ -20,10 +20,11 @@ const LongTermRentalOptionBlock = ({
         containerStyle={styles.longTermRentalContainer}
       />
       <CustomInput
-        value={longTermPrice}
-        setValue={setLongTermPrice}
+        value={'1200'}
+        defaultValue={'1200'}
+        isDisabled={true}
         label={Strings.labels.longTerRentalLabel}
-        containerStyle={styles.label}
+        containerStyle={styles.inputContainer}
       />
     </View>
   );

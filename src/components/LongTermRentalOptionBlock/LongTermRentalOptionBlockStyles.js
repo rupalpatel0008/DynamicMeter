@@ -7,6 +7,9 @@ const styles = StyleSheet.create({
     borderColor: Colors.bars,
     paddingBottom: Metrics.baseMargin,
   },
+  inputContainer: {
+    opacity: 0.5,
+  },
 });
 
 export default styles;

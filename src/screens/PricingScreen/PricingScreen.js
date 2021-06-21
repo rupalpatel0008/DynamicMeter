@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, ScrollView} from 'react-native';
+import {View, ScrollView, KeyboardAvoidingView} from 'react-native';
 import {
   Header,
   CustomInput,
@@ -12,12 +12,13 @@ import {
 } from '../../components';
 import {Strings} from '../../constants';
 import styles from './PricingScreenStyles';
-import {ScreenHeight} from '../../theme';
+
+const findMeterValue = (regularPrice, peakPrice, isLongTermRental) => {};
 
 const PricingScreen = () => {
   const [regularPrice, setRegularPrice] = useState(0);
   const [peakPrice, setPeakPrice] = useState(0);
-  const [longTermPrice, setLongTermPrice] = useState(0);
+  const [longTermPrice, setLongTermPrice] = useState(1200);
   const {selectedWeekDays} = useSelectedWeekDays();
   const [isPeakPriceOnHolidays, setIsPeakPriceOnHolidays] = useState(false);
   const [isLongTermRental, setIsLongTermRental] = useState(false);
@@ -25,7 +26,9 @@ const PricingScreen = () => {
     <View style={styles.container}>
       <Header />
       <ScrollView contentContainerStyle={styles.scrollView}>
-        <View style={styles.contentContainer}>
+        <KeyboardAvoidingView
+          style={styles.contentContainer}
+          behavior={'padding'}>
           <CustomInput
             value={regularPrice}
             setValue={setRegularPrice}
@@ -52,7 +55,7 @@ const PricingScreen = () => {
             longTermPrice={longTermPrice}
             setLongTermPrice={setLongTermPrice}
           />
-        </View>
+        </KeyboardAvoidingView>
       </ScrollView>
       <Footer />
     </View>

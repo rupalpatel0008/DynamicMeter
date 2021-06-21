@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
   container: {
     maxWidth: ScreenWidth,
     flexDirection: 'row',
-    backgroundColor: Colors.background,
+    backgroundColor: Colors.overlay,
     paddingHorizontal: Metrics.baseMargin,
     paddingVertical: Metrics.smallMargin,
     alignItems: 'center',

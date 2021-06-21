@@ -4,7 +4,7 @@ import {Colors, Fonts, Metrics} from '../../theme';
 const styles = StyleSheet.create({
   container: {
     zIndex: 10,
-    elevation: 2,
+    elevation: 5,
     position: 'absolute',
     bottom: 0,
     left: 0,
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   buttonsRow: {
     flexDirection: 'row',
     marginHorizontal: Metrics.baseMargin,
-    marginTop: Metrics.smallMargin,
+    marginVertical: Metrics.smallMargin,
   },
   backButton: {
     borderColor: Colors.primary,
