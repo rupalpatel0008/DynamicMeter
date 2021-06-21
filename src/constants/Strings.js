@@ -18,6 +18,7 @@ const Strings = {
   longTermRental: 'Long Term Rental',
   longTermInfo:
     'Allow guests to book your car for long term, ie greater than 2 months.',
+  next: 'Next',
   weekDays: [
     {
       id: '1',

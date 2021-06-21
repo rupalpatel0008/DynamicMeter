@@ -8,9 +8,11 @@ import {
   useSelectedWeekDays,
   OptionBlock,
   LongTermRentalOptionBlock,
+  Footer,
 } from '../../components';
 import {Strings} from '../../constants';
 import styles from './PricingScreenStyles';
+import {ScreenHeight} from '../../theme';
 
 const PricingScreen = () => {
   const [regularPrice, setRegularPrice] = useState(0);
@@ -21,8 +23,8 @@ const PricingScreen = () => {
   const [isLongTermRental, setIsLongTermRental] = useState(false);
   return (
     <View style={styles.container}>
-      <ScrollView>
-        <Header />
+      <Header />
+      <ScrollView contentContainerStyle={styles.scrollView}>
         <View style={styles.contentContainer}>
           <CustomInput
             value={regularPrice}
@@ -52,6 +54,7 @@ const PricingScreen = () => {
           />
         </View>
       </ScrollView>
+      <Footer />
     </View>
   );
 };

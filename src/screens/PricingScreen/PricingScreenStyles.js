@@ -7,6 +7,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
     height: ScreenHeight,
   },
+  scrollView: {
+    minHeight: ScreenHeight - Metrics.baseMargin,
+  },
   contentContainer: {
     paddingTop: Metrics.baseMargin,
   },

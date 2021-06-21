@@ -3,7 +3,6 @@ import {Colors, Fonts, Metrics} from '../../theme';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: Colors.primary,
     padding: Metrics.baseMargin,
     borderBottomEndRadius: 20,
