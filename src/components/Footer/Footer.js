@@ -21,10 +21,10 @@ const NextButton = () => {
   );
 };
 
-const Footer = () => {
+const Footer = ({meterValue}) => {
   return (
     <View style={styles.container}>
-      <Meter value={4} />
+      <Meter value={meterValue} />
       <View style={styles.buttonsRow}>
         <BackButton />
         <NextButton />

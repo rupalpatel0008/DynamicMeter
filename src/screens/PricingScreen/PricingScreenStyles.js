@@ -8,11 +8,10 @@ const styles = StyleSheet.create({
     height: ScreenHeight,
   },
   scrollView: {
-    minHeight: ScreenHeight,
+    minHeight: ScreenHeight + Metrics.baseMargin,
   },
   contentContainer: {
     paddingTop: Metrics.baseMargin,
-    paddingBottom: Metrics.baseMargin,
   },
   label: {
     marginTop: Metrics.baseMargin,
