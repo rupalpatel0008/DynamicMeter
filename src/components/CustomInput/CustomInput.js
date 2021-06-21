@@ -9,20 +9,21 @@ const CustomInput = ({
   setValue,
   containerStyle,
   isDisabled = false,
+  maxLength,
 }) => {
   return (
     <View style={containerStyle}>
       <Text style={styles.label}>{label}</Text>
       <View style={styles.inputBoxContainer}>
-        {value > 0 && <Text style={styles.dollarSign}>$</Text>}
+        {value >= 0 && value !== '' && <Text style={styles.dollarSign}>$</Text>}
         <TextInput
           style={[
             styles.inputText,
-            value === 0 && {paddingLeft: Metrics.baseMargin},
+            value === '' && {paddingLeft: Metrics.baseMargin},
           ]}
           value={value}
           keyboardType="number-pad"
-          maxLength={5}
+          maxLength={maxLength || 5}
           onChangeText={setValue}
           underlineColorAndroid="transparent"
           editable={!isDisabled}

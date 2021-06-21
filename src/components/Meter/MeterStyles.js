@@ -34,13 +34,6 @@ const styles = StyleSheet.create({
     width: 61,
     height: 30.5,
   },
-  needle: {
-    height: 60,
-    width: 30,
-  },
-  needleWrapper: {
-    top: 10,
-  }
 });
 
 export default styles;
