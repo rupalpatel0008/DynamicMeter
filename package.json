@@ -7,7 +7,9 @@
     "ios": "npx react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "buildApk": "cd android && ./gradlew assembleRelease && cd .. && open ./android/app/build/outputs/apk/release",
+    "buildAab": "cd android && ./gradlew bundleRelease && cd .. && open ./android/app/build/outputs/bundle/release"
   },
   "dependencies": {
     "react": "17.0.1",
