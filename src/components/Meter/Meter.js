@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import RNSpeedometer from 'react-native-speedometer';
-import {Icons} from '../../assets';
 import Strings from '../../constants/Strings';
 import {Colors} from '../../theme';
 import styles from './MeterStyles';
@@ -40,10 +39,10 @@ const Meter = ({value}) => {
     <View style={styles.container}>
       <RNSpeedometer
         labels={meterLabels}
-        value={value - 1}
+        value={value}
         size={81}
-        minValue={0}
-        maxValue={3}
+        minValue={1}
+        maxValue={4}
         labelStyle={styles.labelStyle}
         labelNoteStyle={styles.labelStyle}
         halfCircleStyle={styles.halfCircleStyle}

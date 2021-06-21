@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {View, ScrollView, KeyboardAvoidingView} from 'react-native';
+import React, {useState, useEffect, useRef} from 'react';
+import {View, ScrollView} from 'react-native';
 import {
   Header,
   CustomInput,
@@ -12,6 +12,20 @@ import {
 import {Strings} from '../../constants';
 import styles from './PricingScreenStyles';
 
+function usePrevious(value) {
+  // The ref object is a generic container whose current property is mutable ...
+  // ... and can hold any value, similar to an instance property on a class
+  const ref = useRef();
+
+  // Store current value in ref
+  useEffect(() => {
+    ref.current = value;
+  }, [value]); // Only re-run if value changes
+
+  // Return previous value (happens before update in useEffect above)
+  return ref.current;
+}
+
 const useGetMeterValue = (
   regularPrice,
   peakPrice,
@@ -19,36 +33,50 @@ const useGetMeterValue = (
   isPeakPriceOnHolidays,
 ) => {
   const [meterValue, setMeterValue] = useState(0);
+  const [criteria1, setCriteria1] = useState(0);
+  const [criteria2, setCriteria2] = useState(0);
+  const [criteria3, setCriteria3] = useState(0);
+  const [criteria4, setCriteria4] = useState(0);
+  const oldRegularPrice = usePrevious(regularPrice);
+  const oldPeakPrice = usePrevious(peakPrice);
   useEffect(() => {
     if (regularPrice >= 55 && regularPrice <= 70) {
-      setMeterValue(prev => prev + 1);
+      setCriteria1(1);
+    } else if (oldRegularPrice >= 55 && regularPrice < 55) {
+      setCriteria1(0);
     }
-  }, [regularPrice]);
+  }, [oldRegularPrice, regularPrice]);
   useEffect(() => {
     if (peakPrice >= 75 && peakPrice <= 90) {
-      setMeterValue(prev => prev + 1);
+      setCriteria2(1);
+    } else if (oldPeakPrice >= 75 && peakPrice < 75) {
+      setCriteria2(0);
     }
-  }, [peakPrice]);
+  }, [oldPeakPrice, peakPrice]);
   useEffect(() => {
     if (isLongTermRental) {
-      setMeterValue(prev => prev + 1);
+      setCriteria3(1);
     } else {
-      setMeterValue(prev => (prev > 0 ? prev - 1 : prev));
+      setCriteria3(0);
     }
   }, [isLongTermRental]);
   useEffect(() => {
     if (isPeakPriceOnHolidays) {
-      setMeterValue(prev => prev + 1);
+      setCriteria4(1);
     } else {
-      setMeterValue(prev => (prev > 0 ? prev - 1 : prev));
+      setCriteria4(0);
     }
   }, [isPeakPriceOnHolidays]);
+
+  useEffect(() => {
+    setMeterValue(criteria1 + criteria2 + criteria3 + criteria4);
+  }, [criteria1, criteria2, criteria3, criteria4]);
   return {meterValue};
 };
 
 const PricingScreen = () => {
-  const [regularPrice, setRegularPrice] = useState(0);
-  const [peakPrice, setPeakPrice] = useState(0);
+  const [regularPrice, setRegularPrice] = useState('');
+  const [peakPrice, setPeakPrice] = useState('');
   const [longTermPrice, setLongTermPrice] = useState(1200);
   const [isPeakPriceOnHolidays, setIsPeakPriceOnHolidays] = useState(false);
   const [isLongTermRental, setIsLongTermRental] = useState(false);
@@ -58,7 +86,6 @@ const PricingScreen = () => {
     isLongTermRental,
     isPeakPriceOnHolidays,
   );
-  console.log({meterValue});
   return (
     <View style={styles.container}>
       <Header />
@@ -68,6 +95,7 @@ const PricingScreen = () => {
             value={regularPrice}
             setValue={setRegularPrice}
             label={Strings.labels.regularPrice}
+            maxLength={2}
           />
           <InformationBlock infoText={Strings.regularPriceInfo} />
           <CustomInput
@@ -75,6 +103,7 @@ const PricingScreen = () => {
             setValue={setPeakPrice}
             label={Strings.labels.peakPrice}
             containerStyle={styles.label}
+            maxLength={2}
           />
           <InformationBlock infoText={Strings.peakPriceInfo} />
           <WeekDays />
